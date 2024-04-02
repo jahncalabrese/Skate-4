@@ -1,0 +1,82 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.logo {
+  width: 100px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.navbar {
+  /* Styles for navigation bar */
+}
+
+/* Content styles */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+}
+
+.text-box {
+  width: calc(50% - 20px); /* Adjust width as needed */
+  padding: 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.tricks {
+  width: calc(50% - 20px); /* Adjust width as needed */
+  padding: 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.meter-box {
+  width: calc(50% - 20px); /* Adjust width as needed */
+  padding: 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+/* Styles for images */
+.image {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .text-box,
+  .tricks,
+  .meter-box {
+    width: 100%;
+  }
+}
