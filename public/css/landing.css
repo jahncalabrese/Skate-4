@@ -1,8 +1,10 @@
+/* Reset default margin and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 /* Main container */
 .container {
   display: flex;
@@ -10,12 +12,14 @@
   align-items: center;
   height: 100vh; /* Adjust height as needed */
 }
+
 /* Logo styles */
 .logo {
   width: 150px; /* Adjust size as needed */
   height: auto; /* Maintain aspect ratio */
   margin-bottom: 20px; /* Add spacing between logo and login form */
 }
+
 /* Login form styles */
 .login-form {
   width: 300px; /* Adjust width as needed */
@@ -25,19 +29,23 @@
   background-color: #f9f9f9;
   text-align: center;
 }
+
 .input-group {
   margin-bottom: 20px; /* Add spacing between input fields */
 }
+
 .input-group label {
   display: block;
   margin-bottom: 5px;
 }
+
 .input-group input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
 .btn {
   width: 100%;
   padding: 10px;
@@ -47,9 +55,11 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
 .btn:hover {
   background-color: #555;
 }
+
 /* Responsive styles */
 @media only screen and (max-width: 768px) {
   .login-form {
