@@ -1,68 +1,251 @@
-/* Reset default margin and padding */
+/* UNIVERSAL */
+
 * {
-  margin: 0;
-  padding: 0;
+  background-color: black;
   box-sizing: border-box;
 }
 
-/* Main container */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Adjust height as needed */
+/* CLASSES */
+.main {
+  height: 76%;
 }
 
-/* Logo styles */
+/*Logo Class */
+
 .logo {
-  width: 150px; /* Adjust size as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 20px; /* Add spacing between logo and login form */
+  float: left;
+  width: 49%;
+  height: 100px;
 }
 
-/* Login form styles */
-.login-form {
-  width: 300px; /* Adjust width as needed */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+.logo img {
+  display: flex;
+  float: left;
+  align-items: center;
+  padding: 10% 10% auto auto;
+  height: 75%;
+  width: 75%;
+  margin: 0;
+}
+
+/* Login Class */
+.login {
+  align-items: right;
+  float: right;
+  width: 50%;
+  margin: auto;
+}
+
+.login h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 400%;
+  margin: 5% auto 15% auto;
+  color: white;
+  font-weight: bold;
+}
+
+.login h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 200%;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.login-options {
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login button {
+  border: solid grey;
+  height: 40px;
+  margin: 1% auto 1% auto;
+  width: 100%;
+  border-radius: 40px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+}
+
+.user-div {
+  margin: 1% auto 1% auto;
+  width: 100%;
+  border-radius: 40px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+}
+
+.user-div input {
+  width: 90%;
+  height: 40px;
+  margin: auto auto 20px auto;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: white;
+}
+
+.user-div .login button {
+  width: 100%;
+  margin: 10px auto;
+}
+
+.login h3 {
+  font-size: 150%;
+  margin-top: 15%;
+}
+
+.divider {
   text-align: center;
+  font-size: 100%;
 }
 
-.input-group {
-  margin-bottom: 20px; /* Add spacing between input fields */
-}
+/* Footer Class */
 
-.input-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.input-group input {
+.footer {
+  padding-top: 10%;
+  height: 25%;
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  display: flex;
 }
 
-.btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.footer ul {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0 10% 0 10%;
 }
 
-.btn:hover {
-  background-color: #555;
+.footer li {
+  font-size: 90%;
+  padding: 0;
+  margin: 1% 1% auto 1%;
+  flex-shrink: 1;
+  flex-grow: 1;
 }
 
-/* Responsive styles */
+/* ID */
+
+#create-account {
+  background-color: lightskyblue;
+}
+
+#sign-in {
+  color: skyblue;
+}
+
+#disclaimer {
+  font-weight: 25;
+}
+
 @media only screen and (max-width: 768px) {
-  .login-form {
-    width: 80%;
+  /* Logo */
+
+  .logo {
+    display: block;
+    float: none;
+  }
+
+  .logo img {
+    display: block;
+    float: none;
+    align-items: left;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Login */
+
+  .login {
+    display: block;
+    width: 100%;
+    padding: 10%;
+  }
+
+  .login h1 {
+    font-size: 250%;
+  }
+
+  .login-options {
+    width: 100%;
+  }
+
+  .footer {
+    margin-top: auto;
+    padding: 1%;
+  }
+
+  .footer ul {
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 0 10% 0 10%;
+  }
+
+  .footer li {
+    margin: 0;
+    flex-shrink: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    padding: 0 1% 0 1%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* Logo */
+
+  .logo {
+    display: block;
+    float: none;
+  }
+
+  .logo img {
+    float: none;
+    align-items: left;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Login */
+
+  .login {
+    display: block;
+    width: 100%;
+    padding: 10%;
+  }
+
+  .login h1 {
+    font-size: 250%;
+  }
+
+  .login-options {
+    width: 100%;
+  }
+
+  .footer {
+    margin-top: auto;
+    padding: 1%;
+  }
+
+  .footer ul {
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 0 10% 0 10%;
+  }
+
+  .footer li {
+    margin: 0;
+    flex-shrink: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    padding: 0 1% 0 1%;
   }
 }
