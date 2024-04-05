@@ -1,13 +1,14 @@
-const User = require('./User');
-const Gallery = require('./Gallery');
-const Painting = require('./Painting');
+const User = require('./users');
+const Trick = require('./Trick');
 
-Gallery.hasMany(Painting, {
-  foreignKey: 'gallery_id',
+// Define associations
+User.hasMany(Trick, {
+  foreignKey: 'userId', // Name of the foreign key attribute in the Trick model
+  onDelete: 'CASCADE', // When a user is deleted, delete all associated tricks
 });
 
-Painting.belongsTo(Gallery, {
-  foreignKey: 'gallery_id',
+Trick.belongsTo(User, {
+  foreignKey: 'userId', // Name of the foreign key attribute in the Trick model
 });
 
-module.exports = { User, Gallery, Painting };
+module.exports = { User, Trick };
