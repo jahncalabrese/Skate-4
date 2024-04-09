@@ -54,5 +54,11 @@ User.init(
       modelName: 'user',
     }
 );
+// User.create ({
+//   username: 'manichino',
+//   email: 'manichino@gmail.com',
+//   password: "manichino123",
+//   rank: 'pro'
+// });
 
 module.exports = User;
