@@ -1,0 +1,6 @@
+{{#each userTricks}}
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="trick--{{ userId }}-{{ id }}" {{#if completed}}checked{{/if}}/>
+        <label class="form-check-label" for="trick-{{ userId }}-{{ id }}">{{ name }}</label>
+    </div>
+{{/each}}
