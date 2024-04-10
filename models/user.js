@@ -16,10 +16,6 @@ User.init(
         primaryKey: true,
         autoIncrement: true,
       },
-      username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -36,8 +32,9 @@ User.init(
         },
       },
       rank: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM('Noob', 'Novice', 'Mid', 'Gnarly', 'Pro'),
         allowNull: false,
+        defaultValue: 'Noob' // Set a default value if needed
       },
     },
     {
@@ -54,11 +51,7 @@ User.init(
       modelName: 'user',
     }
 );
-// User.create ({
-//   username: 'manichino',
-//   email: 'manichino@gmail.com',
-//   password: "manichino123",
-//   rank: 'pro'
-// });
+
+
 
 module.exports = User;

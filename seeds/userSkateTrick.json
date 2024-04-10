@@ -1,0 +1,22 @@
+[
+    {
+        "userId": 1,
+        "skateTrickId": 1
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 2
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 3
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 4
+    },
+    {
+        "userId": 2,
+        "skateTrickId": 1
+    }
+]

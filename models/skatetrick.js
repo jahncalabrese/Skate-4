@@ -18,8 +18,17 @@ SkateTrick.init(
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false
-  }  
+    },
+    level: {
+      type: DataTypes.ENUM(
+        "Noob",
+        "Novice",
+        "Mid",
+        "Gnarly",
+        "Pro"
+      ),
+      allowNull: false,
+    },  
   },
   {
     sequelize,

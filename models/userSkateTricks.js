@@ -1,9 +1,15 @@
 const { DataTypes, Model } = require('sequelize');
-const sequelize = require('./database'); // Assuming you have a separate file for Sequelize initialization
+const sequelize = require('../config/connection'); // Assuming you have a separate file for Sequelize initialization
 
 class UserSkateTricks extends Model {}
 
 UserSkateTricks.init({
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+    },
     userId: {
         type: DataTypes.INTEGER,
         allowNull: false
