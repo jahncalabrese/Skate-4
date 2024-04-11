@@ -1,4 +1,4 @@
-/* UNIVERSAL */
+UNIVERSAL
 * {
   background-color: black;
   box-sizing: border-box;
@@ -6,65 +6,87 @@
 
 /* CLASSES */
 .main {
-  height: 76%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*Logo Class */
 
 .logo {
-  float: left;
-  width: 49%;
+  /* float: left; */
+  width: 50%;
 }
 
 .logo img {
-  display: flex;
+  /* /* display: flex;
   float: left;
-  align-items: center;
+  align-items: center; */
   padding: 10% 10% auto auto;
-  height: 75%;
-  width: 75%;
-  margin: 0;
+  height: 75%; 
+  width: 100%;
+  /* margin: 0; */
 }
 
 /* Login Class */
 .login {
-  align-items: right;
+  width: 50%; /* Adjust width as needed */
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background color for the login section */
+  padding: 20px; /* Add padding for spacing inside the box */
+  border-radius: 10px; /* Add rounded corners to the login box */
+  /* align-items: right;
   float: right;
   width: 50%;
-  margin: auto;
+  margin: auto; */
 }
 
-.login h1 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 400%;
-  margin: 5% auto 15% auto;
+.login h1, .login h2, .login label{
+  /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
+  /* font-size: 400%; */
+  /* margin: 5% auto 15% auto; */
   color: white;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
-.login h2 {
+/* .login h2 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 200%;
   color: white;
   font-weight: bold;
   margin-bottom: 30px;
-}
+} */
 
-.login-options {
+/* .login-options {
   width: 50%;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 .login button {
-  border: solid grey;
+  border: none; /* Remove border */
+  height: 40px;
+  width: 100%;
+  border-radius: 20px; /* Adjust border radius as needed */
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  /* border: solid grey;
   height: 40px;
   margin: 1% auto 1% auto;
   width: 100%;
   border-radius: 40px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 100%;
+  font-size: 100%; */
+}
+.login input {
+  width: 100%; /* Make input fields fill the width */
+  height: 40px;
+  margin-bottom: 10px; /* Add some space between input fields */
+  border-radius: 5px; /* Adjust border radius as needed */
+  padding: 5px; /* Add padding for spacing inside the input fields */
+  box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 .user-div {

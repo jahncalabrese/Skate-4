@@ -23,7 +23,11 @@ router.get('/', async (req, res) => {
       const serializedTricks = userTricks.map(trick => trick.get({plain: true}))
 
       console.log("tricks test", serializedTricks);
-      const userRank = serializedTricks[0].user.rank;
+      let userRank = 'Noob';
+      if (serializedTricks[0]) {
+        userRank = serializedTricks[0].user.rank;
+      }
+      // const userRank = serializedTricks[0].user.rank;
       console.log("user rank", userRank);
 
       //counts number of learned tricks
