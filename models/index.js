@@ -1,14 +1,23 @@
 const User = require("./user");
-const Trick = require("./skateTrick");
+const SkateTrick = require("./skateTrick");
+const UserSkateTricks = require("./userSkateTricks")
 
 // Define associations
-User.hasMany(Trick, {
+User.hasMany(UserSkateTricks, {
   foreignKey: "userId", // Name of the foreign key attribute in the Trick model
   onDelete: "CASCADE", // When a user is deleted, delete all associated tricks
 });
 
-Trick.belongsTo(User, {
+UserSkateTricks.belongsTo(User, {
+  foreignKey: "userId", // Name of the foreign key attribute in the Trick model
+});
+SkateTrick.hasMany(UserSkateTricks, {
+  foreignKey: "userId", // Name of the foreign key attribute in the Trick model
+  onDelete: "CASCADE", // When a user is deleted, delete all associated tricks
+});
+
+UserSkateTricks.belongsTo(SkateTrick, {
   foreignKey: "userId", // Name of the foreign key attribute in the Trick model
 });
 
-module.exports = { User, Trick };
+module.exports = { User, SkateTrick, UserSkateTricks };
