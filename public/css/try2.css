@@ -1,0 +1,125 @@
+/* UNIVERSAL */
+* {
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    color: white;
+    padding-top: 100px; /* Adjust as needed */
+    background-color: black;
+}
+h2 {
+    text-align: center;
+}
+/* CLASSES */
+.main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logo {
+    width: 50%;
+}
+
+.logo img {
+    padding: 10% 10% auto auto;
+    height: 75%;
+    width: 100%;
+}
+
+.login {
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.login h1, .login h2,.login h4, .login label {
+    color: white;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    text-align: center;
+
+}
+.login h4 {
+    text-align: left; /* Align "Don't end up in the Hall of Meat" to the left */
+    color: white;
+}
+
+.login button {
+    border: none;
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.login input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    color: grey; /* Text color for input */
+}
+
+
+
+#logout {
+    background-color: #f44336; /* Red color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    position: absolute; /* Position absolute to position it */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+}
+
+#level-display {
+    text-align: center;
+}
+#level-display h1{
+    text-align: left;
+    margin-left: 80px;
+}
+
+
+
+  /* Center the tricks container horizontally */
+#tricks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 100px; /* Add left margin of 100px */
+  }
+
+  /* Style for each trick box */
+.trick-box {
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Align items vertically */
+    justify-content: flex-start; /* Align items to the start */
+    margin-bottom: 20px; /* Add margin between trick boxes */
+  }
+h3 {
+    font-size:larger;
+    font-weight: bold;
+    margin-left: 20px; /* Add margin at the bottom for spacing */
+    margin-top: 5px;
+}
+p {
+    margin-left: 40px; /* Add margin at the bottom for spacing */
+    margin-top: 10px;
+}
+  /* Style for the checkboxes */
+.trick-box input[type="checkbox"] {
+    margin-right: 10px; /* Add margin to the right of the checkbox */
+}
+
