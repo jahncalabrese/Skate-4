@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
       const learnedTricksCount = serializedTricks.filter(trick => trick.completed).length;
       console.log('learnedTricksCount', learnedTricksCount)
 
-      res.render('user', {
+      res.render('user'      , {
           serializedTricks,
           learnedTricksCount,
           userRank,
