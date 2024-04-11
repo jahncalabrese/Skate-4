@@ -17,17 +17,17 @@
     {
         "name": "Heelflip",
         "description": "Similar to a kickflip, but the board rotates in the opposite direction, flipping 360 degrees while airborne.",
-        "level": "Beginner"
+        "level": "Novice"
     },
     {
         "name": "Varial Kickflip",
         "description": "A combination trick involving the board spinning 180 degrees along its axis (like a pop shove-it) and flipping 360 degrees (like a kickflip).",
-        "level": "Beginner"
+        "level": "Novice"
     },
     {
         "name": "Frontside 180",
         "description": "A trick where the rider and board rotate 180 degrees in the air, turning frontside (facing forward).",
-        "level": "Beginner"
+        "level": "Novice"
     },
     {
         "name": "Backside 180",

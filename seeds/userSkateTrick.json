@@ -16,7 +16,47 @@
         "skateTrickId": 4
     },
     {
-        "userId": 2,
-        "skateTrickId": 1
+        "userId": 1,
+        "skateTrickId": 5
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 6
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 7
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 8
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 9
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 10
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 11
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 12
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 13
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 14
+    },
+    {
+        "userId": 1,
+        "skateTrickId": 15
     }
 ]
