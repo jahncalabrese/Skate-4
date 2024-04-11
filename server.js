@@ -5,6 +5,8 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
 // const helpers = require('./utils/helpers');
+// const tooltip = require("@logo-elements/tooltip");
+// import "@logo-elements/tooltip";
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
