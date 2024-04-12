@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
       const userId = req.session.user_id;
 
-      console.log('userId', userId)
+      // console.log('userId', userId)
 
       //gets user skate tricks
       const userTricks = await UserSkateTricks.findAll({
@@ -23,16 +23,17 @@ router.get('/', async (req, res) => {
       const serializedTricks = userTricks.map(trick => trick.get({plain: true}))
 
       console.log("tricks test", serializedTricks);
+
       let userRank = 'Noob';
       if (serializedTricks[0]) {
         userRank = serializedTricks[0].user.rank;
       }
       // const userRank = serializedTricks[0].user.rank;
-      console.log("user rank", userRank);
+      // console.log("user rank", userRank);
 
       //counts number of learned tricks
       const learnedTricksCount = serializedTricks.filter(trick => trick.completed).length;
-      console.log('learnedTricksCount', learnedTricksCount)
+      // console.log('learnedTricksCount', learnedTricksCount)
 
       res.render('user'      , {
           serializedTricks,
@@ -40,6 +41,7 @@ router.get('/', async (req, res) => {
           userRank,
           logged_in: req.session.logged_in
       })
+      console.log(req.session.logged_in);
 
   } catch (err) {
       console.error('error retrieving user tricks', err);

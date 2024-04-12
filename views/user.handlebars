@@ -3,6 +3,7 @@
 {{#if logged_in}}
   <nav>
     <button class="btn" id="logout">logout</button>
+    <button id="saveBtn">Save</button>
   </nav>
 {{/if}}
 
@@ -50,8 +51,6 @@
 <div id="level-display">
   <h2>Current Rank: Noob</h2>
 <img>  </img>
-<!DOCTYPE html>
-<html>
 <head>
   <title>Skateboard Tricks</title>
   <style>
@@ -74,10 +73,15 @@
 <h1>Skateboard Tricks</h1>
 
 <div id="tricks-container">
-  <!-- Tricks will be inserted here -->
+  {{#each serializedTricks as |trick|}}
+    <div class="form-check">
+        <input class="form-check-input trick-checkbox" type="checkbox" value={{trick.skateTrickId}} id="trick--{{ trick.userId }}-{{ trick.id }}" {{#if trick.completed}}checked{{/if}}/>
+        <label class="form-check-label" for="trick--{{ trick.userId }}-{{ trick.id }}">{{ trick.skate.name }}</label>
+    </div>
+  {{/each}}
 </div>
 
-<script>
+{{!-- <script>
   // Your JSON data goes here
   var tricks = [
     {
@@ -222,18 +226,17 @@ function updateLevel(index) {
   tricksContainer.style.display = "block";
 }
 
-</script>
+</script> --}}
 
-
-
-</body>
-</html>
-
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {{#if logged_in}}
   <script src="/js/logout.js"></script>
 {{/if}}
+<script src="/js/dashboard.js"></script>
+</body>
+
+</html>
+
 
 {{!-- <h6 class="card-subtitle text-body-secondary">Tricks Learned: <span id="learnedTricksCount"></span> {{learnedTricksCount}} / 15</h6>
   {{#each serializedTricks as |trick|}}
