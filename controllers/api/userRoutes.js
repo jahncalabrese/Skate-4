@@ -1,15 +1,18 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, UserSkateTricks, SkateTrick } = require("../../models");
 
 router.post("/login", async (req, res) => {
-  console.log(req.body);
   try {
     let userData = await User.findOne({ where: { email: req.body.email } });
-    console.log(userData);
     if (!userData) {
-      console.log("create new user");
       userData = await User.create(req.body)
-      
+      const skateTrickData = await SkateTrick.findAll()
+      skateTrickData.forEach(async trick => {
+        const userSkateTrick = await UserSkateTricks.create({
+          userId: userData.id,
+          skateTrickId: trick.id
+        })
+      })
     }else{
 
     const validPassword = await userData.checkPassword(req.body.password);
@@ -20,12 +23,10 @@ router.post("/login", async (req, res) => {
         .json({ message: "Incorrect email or password, please try again" });
       return;
     }}
-    console.log(userData);
+    console.log('userData', userData);
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      // req.redirect("/dashboard");
-
       res.json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
