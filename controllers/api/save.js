@@ -6,6 +6,7 @@ router.post('/', async (req, res) => {
 
     try {
         for (const { trickId, isChecked } of trickStatus) {
+            console.log([trickId, isChecked]);
             await UserSkateTricks.update(
                 { completed: isChecked },
                 { where: { skateTrickId: trickId } }

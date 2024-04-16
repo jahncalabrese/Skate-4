@@ -19,5 +19,13 @@ const loginHandler = async (event) => {
   }
 };
 
+var ele = document.getElementById("login-form");
+if(ele){
+  if(ele.addEventListener){
+    ele.addEventListener("submit", loginHandler, false);  //Modern browsers
+}else if(ele.attachEvent){
+    ele.attachEvent('onsubmit', loginHandler);            //Old IE
+}
+}
 
-document.querySelector(".login-form").addEventListener("submit", loginHandler);
+// document.getElementById("login-form").addEventListener("submit", loginHandler);
