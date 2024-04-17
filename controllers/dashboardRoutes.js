@@ -30,8 +30,6 @@ router.get('/', async (req, res) => {
 
       //counts number of learned tricks
       const learnedTricksCount = serializedTricks.filter(trick => trick.completed).length;
-      // console.log('learnedTricksCount', learnedTricksCount)
-      updateRank(learnedTricksCount);
 
       res.render('user', {
           serializedTricks,
@@ -65,21 +63,3 @@ router.get('/', async (req, res) => {
 
 
   module.exports = router;
-
-  
-//logic for rank update
-function updateRank(trickCounter) {
-  console.log(trickCounter);
-  if(trickCounter < 3) {
-    userRank = 'Noob';
-  } else if (trickCounter < 6){
-    userRank = 'Novice';
-  } else if (trickCounter < 9){
-    userRank = 'Mid';
-  } else if (trickCounter < 12) {
-    userRank = 'Gnarly';
-  } else {
-    userRank = 'Pro';
-  }
-  return userRank;
-}  
