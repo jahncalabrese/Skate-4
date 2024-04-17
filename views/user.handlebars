@@ -3,7 +3,7 @@
 {{#if logged_in}}
   <nav>
     <button class="btn" id="logout">logout</button>
-    <button id="saveBtn">Save</button>
+    <button class ="btn save" id="saveBtn">Save</button>
   </nav>
 {{/if}}
 
@@ -49,7 +49,7 @@
             .addTo(map);
     </script>
 <div id="level-display">
-  <h2>Current Rank: Noob</h2>
+  <h2>Current Rank: {{ userRank }}</h2>
 <img>  </img>
 <head>
   <title>Skateboard Tricks</title>
@@ -76,157 +76,9 @@
   {{#each serializedTricks as |trick|}}
     <div class="form-check">
         <input class="form-check-input trick-checkbox" type="checkbox" value={{trick.skateTrickId}} id="trick--{{ trick.userId }}-{{ trick.id }}" {{#if trick.completed}}checked{{/if}}/>
-        <label class="form-check-label" for="trick--{{ trick.userId }}-{{ trick.id }}">{{ trick.skate.name }}</label>
-    </div>
+        <label class="form-check-label" for="trick--{{ trick.userId }}-{{ trick.id }}">{{ trick.skate.name }} - {{ trick.skate.description }}</label>    </div>
   {{/each}}
 </div>
-
-{{!-- <script>
-  // Your JSON data goes here
-  var tricks = [
-    {
-      "name": "Ollie",
-      "description": "A foundational skateboarding trick where the rider and board leap into the air without the use of the rider's hands.",
-      "level": "Noob"
-    },
-    {
-      "name": "Kickflip",
-      "description": "A trick where the skateboard flips under the rider's feet while jumping, making a 360-degree horizontal rotation along its long axis.",
-      "level": "Noob"
-    },
-    {
-      "name": "Pop Shove-it",
-      "description": "Involves the board spinning 180 degrees along its axis while the rider jumps, without flipping.",
-      "level": "Noob"
-    },
-    {
-      "name": "Heelflip",
-      "description": "Similar to a kickflip, but the board rotates in the opposite direction, flipping 360 degrees while airborne.",
-      "level": "Novice"
-    },
-    {
-      "name": "Varial Kickflip",
-      "description": "A combination trick involving the board spinning 180 degrees along its axis (like a pop shove-it) and flipping 360 degrees (like a kickflip).",
-      "level": "Novice"
-    },
-    {
-      "name": "Frontside 180",
-      "description": "A trick where the rider and board rotate 180 degrees in the air, turning frontside (facing forward).",
-      "level": "Novice"
-    },
-    {
-      "name": "Backside 180",
-      "description": "Similar to a frontside 180, but the rider and board rotate 180 degrees with the back facing the direction of rotation.",
-      "level": "Mid"
-    },
-    {
-      "name": "Frontside Boardslide",
-      "description": "Involves sliding the underside of the skateboard's deck along a rail or ledge, with the rider facing forward during the slide.",
-      "level": "Mid"
-    },
-    {
-      "name": "Backside Lipslide",
-      "description": "Similar to a frontside boardslide, but the rider approaches the rail or ledge with their back to the direction of travel.",
-      "level": "Mid"
-    },
-    {
-      "name": "360 Flip",
-      "description": "Combines a 360-degree spin along the vertical axis with a kickflip, resulting in a board that both spins and flips during the trick.",
-      "level": "Gnarly"
-    },
-    {
-      "name": "Hardlflip",
-      "description": "A combination trick involving a frontside pop shove-it and a kickflip, resulting in the board flipping and spinning simultaneously.",
-      "level": "Gnarly"
-    },
-    {
-      "name": "Nollie Heelflip",
-      "description": "Similar to a heelflip, but performed with a nollie stance, where the rider uses the front foot to pop the nose of the skateboard.",
-      "level": "Gnarly"
-    },
-    {
-      "name": "360 Hardflip",
-      "description": "Combines a 360-degree spin along the vertical axis with a hardflip, resulting in a complex rotation and flip.",
-      "level": "Pro"
-    },
-    {
-      "name": "Varial Heelflip",
-      "description": "A combination trick involving a heelflip and a pop shove-it, resulting in the board spinning 180 degrees along its axis while flipping.",
-      "level": "Pro"
-    },
-    {
-      "name": "Inward Heelflip",
-      "description": "A variation of the heelflip where the board rotates inward (towards the rider) while flipping.",
-      "level": "Pro"
-    }
-  ];
-
-
- var tricksContainer = document.getElementById("tricks-container");
-  var levelDisplay = document.getElementById("level-display");
-
-  // Loop through each trick and create HTML elements
-  tricks.forEach(function(trick, index) {
-    var trickBox = document.createElement("div");
-    trickBox.classList.add("trick-box");
-
-    var checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.addEventListener("click", function() {
-      updateLevel(index);
-    });
-    trickBox.appendChild(checkbox);
-
-    var trickName = document.createElement("h3");
-    trickName.textContent = trick.name;
-    trickBox.appendChild(trickName);
-
-    var trickDescription = document.createElement("p");
-    trickDescription.textContent = trick.description;
-    trickBox.appendChild(trickDescription);
-
-    var trickLevel = document.createElement("p");
-    trickLevel.textContent = "Level: " + trick.level;
-    trickBox.appendChild(trickLevel);
-
-    tricksContainer.appendChild(trickBox);
-
-    // Add an empty line after each trick
-    tricksContainer.appendChild(document.createElement("br"));
-  });
-
-  // Function to update the level display
-function updateLevel(index) {
-  var levelText;
-  if (index < 3) {
-    levelText = "Current Rank: Noob";
-  } else if (index < 6) {
-    levelText = "Current Rank: Novice";
-  } else if (index < 9) {
-    levelText = "Current Rank: Mid";
-  } else if (index < 12) {
-    levelText = "Current Rank: Gnarly";
-  } else {
-    levelText = "Current Rank: Pro";
-  }
-
-  // Update the level text
-  var levelDisplay = document.getElementById("level-display");
-  var h2Element = levelDisplay.querySelector("h2");
-  if (h2Element) {
-    h2Element.textContent = levelText;
-  } else {
-    var newH2Element = document.createElement("h2");
-    newH2Element.textContent = levelText;
-    levelDisplay.appendChild(newH2Element);
-  }
-
-  // Show the tricks container
-  var tricksContainer = document.getElementById("tricks-container");
-  tricksContainer.style.display = "block";
-}
-
-</script> --}}
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {{#if logged_in}}
@@ -236,13 +88,3 @@ function updateLevel(index) {
 </body>
 
 </html>
-
-
-{{!-- <h6 class="card-subtitle text-body-secondary">Tricks Learned: <span id="learnedTricksCount"></span> {{learnedTricksCount}} / 15</h6>
-  {{#each serializedTricks as |trick|}}
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="trick--"{{ trick.userId }}"-"{{ trick.id }} {{#if trick.completed}}checked{{/if}}/>
-        <label class="form-check-label" for="trick-"{{ trick.userId }}"-"{{ trick.id }}>{{ trick.skate.name }}</label>
-    </div>
-  {{/each}} --}}
-{{!-- <h2>Welcome to Skate 4</h2> --}}
